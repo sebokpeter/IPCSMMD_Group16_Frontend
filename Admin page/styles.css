@@ -1,0 +1,10 @@
+
+header{
+    grid-column: 1/13;
+    grid-row: 1/2;
+    background-color: green;
+    background: url("headerbackground2.jpg") no-repeat;
+    -webkit-box-shadow: 0px 10px 84px 34px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 84px 34px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 84px 34px rgba(0,0,0,0.75);
+}
