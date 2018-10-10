@@ -1,7 +1,7 @@
 $('#myForm').on('submit',function(e){
     e.preventDefault();
 
-    var  imageUrl = $('#imgUrl').val();
+    var  imageUrl = $('#imageURL').val();
     var  beerName = $('#beerName').val();
     var  beerBrand = $('#beerBrand').val();
     var  beerPercentage = $('#beerPercentage').val();
