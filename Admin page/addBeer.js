@@ -1,4 +1,4 @@
-$('#myForm').on('submit',function(e){
+$('#myFormAdd').on('submit',function(e){
     e.preventDefault();
 
     var  imageUrl = $('#imgUrl').val();
@@ -21,6 +21,50 @@ $('#myForm').on('submit',function(e){
         url: "http://localhost:58584/api/Beers",
         type: 'POST',
         data: JSON.stringify({
+            "name": beerName,
+            "brand": beerBrand,
+            "type": beerType,
+            "percentage": beerPercentage,
+            "price": beerPrice,
+            "imageURL": imageUrl,
+            "stock": beerStock}),
+        processData: false,
+        contentType: 'application/json',
+        success: function (comments) {
+            console.log("Yiiiaaaahhhhaaaaaa");
+        },
+        error: function (request, message, error) {
+            handleException(request, message, error);
+        }
+    });
+});
+
+$('#myFormUpdate').on('submitUpdate',function(e){
+    e.preventDefault();
+
+    var  id = $('#id').val();
+    var  imageUrl = $('#imgUrl2').val();
+    var  beerName = $('#beerName2').val();
+    var  beerBrand = $('#beerBrand2').val();
+    var  beerPercentage = $('#beerPercentage2').val();
+    var  beerPrice = $('#beerPrice2').val();
+    var  beerStock = $('#beerStock2').val();
+    var  beerType = $('#beerType2').val();
+
+    console.log(id);
+    console.log(imageUrl);
+    console.log(beerName);
+    console.log(beerBrand);
+    console.log(beerPercentage);
+    console.log(beerPrice);
+    console.log(beerStock);
+    console.log(beerType);
+
+    $.ajax({
+        url: "http://localhost:58584/api/Beers/" + id,
+        type: 'PUT',
+        data: JSON.stringify({
+            "id": id,
             "name": beerName,
             "brand": beerBrand,
             "type": beerType,

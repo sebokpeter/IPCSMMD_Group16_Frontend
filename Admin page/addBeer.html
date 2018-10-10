@@ -9,7 +9,7 @@
 <body>
 <header></header>
 <H4>Create New Beer</H4>
-<form id="myForm">
+<form id="myFormAdd">
   <input class="form-control" id="imgURL" placeholder="Image URL">
   <input class="form-control" id="beerName" placeholder="Name" required>
   <input class="form-control" id="beerBrand" placeholder="Brand" required>
@@ -22,6 +22,23 @@
     <option value="3">Dark</option>
   </select>
   <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br>
+<H4>Update Beer</H4>
+<form id="myFormUpdate">
+  <input type="number" class="form-control" id="id" placeholder="ID">
+  <input class="form-control" id="imgURL2" placeholder="Image URL">
+  <input class="form-control" id="beerName2" placeholder="Name" required>
+  <input class="form-control" id="beerBrand2" placeholder="Brand" required>
+  <input type="number" class="form-control" id="beerPercentage2" placeholder="Percentage" required>
+  <input type="number" class="form-control" id="beerPrice2" placeholder="Price" required>
+  <input type="number" class="form-control" id="beerStock2" placeholder="Stock" required>
+  <select class="form-control" id="beerType2">
+    <option value="1">Light</option>
+    <option value="2">Brown</option>
+    <option value="3">Dark</option>
+  </select>
+  <button type="submitUpdate" class="btn btn-primary">Submit</button>
 </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="addBeer.js"></script>
