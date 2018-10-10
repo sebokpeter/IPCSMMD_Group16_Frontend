@@ -449,8 +449,14 @@ main {
     line-height: 100px;
 }
 
-.store:hover {
-    background-color: #014D06;
+#store a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#store a:hover {
+    color: #000000;
+    background-color: #ffffff;
 }
 
 
