@@ -1,3 +1,5 @@
+var AllBeerList;
+
 $('#myFormAdd').on('submit',function(e){
     e.preventDefault();
 
@@ -30,8 +32,10 @@ $('#myFormAdd').on('submit',function(e){
             "stock": beerStock}),
         processData: false,
         contentType: 'application/json',
-        success: function () {
-            postAddRow(posts);
+        success: function (post) {
+            AllBeerList.push(post);
+            clearTableList();
+            postListSuccess(AllBeerList);
         },
         error: function (request, message, error) {
             handleException(request, message, error);
@@ -119,6 +123,8 @@ function postList() {
       type: 'GET',
       dataType: 'json',
       success: function (posts) {
+        AllBeerList = posts;
+        clearTableList();
         postListSuccess(posts);
       },
       error: function (request, message, error) {
@@ -127,7 +133,7 @@ function postList() {
     });
   }
 
-  function postListSuccess(posts) {
+function postListSuccess(posts) {
     // Iterate over the collection of data
     $.each(posts, function (index, post) {
       // Add a row to the post table
@@ -135,7 +141,7 @@ function postList() {
     });
   }
 
-  function postAddRow(post) {
+function postAddRow(post) {
     // Check if <tbody> tag exists, add one if not
      if ($("#postTable tbody").length == 0) {
       $("#postTable").append("<tbody id='beertbody'></tbody>");
@@ -145,7 +151,7 @@ function postList() {
        postBuildTableRow(post));
    }
 
-   function postBuildTableRow(post) {
+function postBuildTableRow(post) {
     var ret =
       "<tr>" +
          "<td>" + post.id + "</td>" +
@@ -159,13 +165,25 @@ function postList() {
     return ret;
   }
 
+function clearTableList() {
+    if ($("#postTable tbody").length == 0) {
+        return;
+    } else {
+        $("#beertbody").remove();
+        return;
+    }
+}
+
 function handleException(request, message, error) {
     var msg = "";
     msg += "Code: " + request.status + "\n";
     msg += "Text: " + request.statusText + "\n";
     if (request.responseJSON != null) {
-        msg += "Message" +
-            request.responseJSON.Message + "\n";
+        msg += "Message" + request.responseJSON.Message + "\n";
     }
     alert(msg);
+}
+
+function findItemInArray(post){
+
 }
