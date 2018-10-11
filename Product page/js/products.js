@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $.ajax({
         type: "GET",
-        url: "https://ipcsmmd-webshop-group16.azurewebsites.net/api/beers?CurrentPage=1&ItemsPerPage=3&isAscending=true&SearchField=id",
+        url: "https://ipcsmmd-webshop-group16.azurewebsites.net/api/beers?CurrentPage=1&ItemsPerPage=6&isAscending=true&SearchField=id",
         dataType: "json",
         success: function (beers) {
             listBeers(beers);
@@ -10,7 +10,17 @@ $(document).ready(function(){
             handleException(request, message, error);
         }
     });
+
+
 });
+
+
+function openDetailPage(id) {
+    window.location= '../Detail%20page/index.html?id=' + id;
+    alert("alert");
+    console.log("log");
+}
+
 
 function listBeers(beers) {
     $.each(beers, function (index, beer) { 
@@ -28,7 +38,7 @@ function buildDescriptionPage(beer){
     '<div id="producttitle">' + beer.name + '</div>' +
     '<div id="productimage"> <img src="' + beer.imageURL + '" alt="css/carlsbergcan.png"></div>' +
     '<div id="price">Price: $' + beer.price + '</div>' + 
-    '<div id="cart"> <a id="btnDetail" href="../Detail%20page/index.html"> Buy</a> </div>' + 
+    '<div id="cart"> <a class="btnDetail" onclick="openDetailPage('+ beer.id +')"> Buy</a> </div>' + 
     '</div>';
     console.log(s);
     $('#main-right').append(s);
