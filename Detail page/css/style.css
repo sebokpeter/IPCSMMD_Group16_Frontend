@@ -1,10 +1,12 @@
 body {
+    background:url("background2.jpg")no-repeat;
+    background-size:cover;
     margin: 0;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 100px 1000px 0px;
+    grid-template-rows: 100px 1000px 0px ;
     overflow-y: hidden; 
-
+    overflow-x: hidden;
 }
 
 header{
@@ -12,10 +14,14 @@ header{
     grid-row: 1/2;
     background-color: green;
     background: url("headerbackground3.jpg") no-repeat;
-    background-size:cover;
+    background-size: cover;
     -webkit-box-shadow: 0px 10px 84px 34px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 10px 84px 34px rgba(0,0,0,0.75);
-box-shadow: 0px 10px 84px 34px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 84px 34px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 84px 34px rgba(0,0,0,0.75);
+}
+
+#navlogo {
+    width: 15%;
 }
 
 #navheader {
@@ -146,7 +152,7 @@ box-shadow: 0px 10px 84px 34px rgba(0,0,0,0.75);
     
     background:#014D06;
     
-    opacity: 0.3;
+    opacity: 0.5;
     
     padding:0;
     
@@ -383,7 +389,6 @@ box-shadow: 0px 10px 84px 34px rgba(0,0,0,0.75);
     }
     
      
-    
     .search-bar::-webkit-search-cancel-button{
     
     -webkit-appearance:none;
@@ -402,86 +407,95 @@ box-shadow: 0px 10px 84px 34px rgba(0,0,0,0.75);
           margin: 0;
           padding: 14px;
         }
-        
-      }
-      
+}
 
 main {
-    background: url("homebackground.jpg") no-repeat;
-    background-size: contain; 
-    grid-column: 1 / 13;
-    grid-row: 2/3;
+
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(8, 1fr);
     display: grid;
-    background-color: #D46B00;
-}
+    grid-gap: 100px;
+}        
 
-
-
-#logoimage {
-    grid-column: 3/11;
-    grid-row: 1/2;
-  /*  background: url("logolarge.png") no-repeat;  
-    background-size: cover; */
-    
-}
-#logoimage img {
-    width: 100%;
-
+#beerbox1{
+    height: 400px;
+    width: 300px;
+    grid-column:3/6;
+    grid-row: 2/5;
+    background-color:white;
+    display: block;
+    display: flex;
+    align-items: center;
 } 
 
-#store {
-    grid-column: 6/10;
-    grid-row: 2/3;
-    background: url("headerbackground3.jpg") no-repeat;
-    color: #ffffff;
+#beerbox1 img {
+    width: 100%;
+}
+    
+    
+    
+    
+#beerbox2{
+    height: 400px;
+    width: 440px;
+    grid-column:7/11;
+    grid-row: 2/5;
+    background-color:white;
+    display: grid;
+    opacity: 0.8;
+    grid-template-rows: 400px 70px;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
     border: #000000 solid 2px;
-    width: 60%;
+    
+} 
+
+#beerbox2_img {
+    padding-top: 20px;
+    grid-column: 2/4;
+    grid-row: 1/2;
+}
+
+#beerbox2 img {
+    width: 100%;
+}
+
+#beerbox2_txt {
+    grid-row: 1/2;
+    grid-column: 2/4;
+    padding-top: 200px;
+    font-size: 22px;
+    line-height: 30px;
+}
+
+#cart{
+    grid-row: 2/3;
+    grid-column: span 4;
+    width:440px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    padding-top: 20px;
+    opacity: 1;
     display: flex;
     justify-content: center;
-    vertical-align: middle;
-    font-size: 40px;
-    border-radius: 100px;
-    -webkit-box-shadow: 0px 11px 36px 3px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 11px 36px 3px rgba(0,0,0,0.75);
-    box-shadow: 0px 11px 36px 3px rgba(0,0,0,0.75);
-    line-height: 100px;
+    background-color: #014D06;
+    color: #FBDE78;
+    border-left: #000000 solid 2px;
+    border-right: #000000 solid 2px;
+    border-bottom: #000000 solid 2px;
 }
 
-#store a {
+    
+#cart a {
+    background-color: #014D06;
+    color: #FBDE78;
     text-decoration: none;
-    color: #fff;
-}
-
-#store a:hover {
-    color: #000000;
+} 
+    
+    
+#cart a:hover {
+    color: orangered;
     background-color: #ffffff;
-}
-
-
-@media only screen and (max-width: 960px) {
-    body {
-        margin: 0;
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: 100px 100% 0px;
-        overflow-y: hidden; 
+    opacity: 1;
+} 
     
-    }
-    
-    main {
-  
-    }
-
-    
-    #store {
-        grid-column: 7/8;
-        grid-row: 5/6;
-        background: url("woodbackground.jpg") no-repeat;
-        color: #ffffff;
-        border: #000000 solid 2px;
-        height: 50%
-    }
-    
-}

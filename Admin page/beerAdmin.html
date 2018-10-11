@@ -7,40 +7,85 @@
   <link rel='stylesheet' type='text/css' href='styles.css'>
 </head>
 <body>
-<header></header>
-<H4>Create New Beer</H4>
-<form id="myFormAdd">
-  <input class="form-control" id="imgURL" placeholder="Image URL">
-  <input class="form-control" id="beerName" placeholder="Name" required>
-  <input class="form-control" id="beerBrand" placeholder="Brand" required>
-  <input type="number" class="form-control" id="beerPercentage" placeholder="Percentage" required>
-  <input type="number" class="form-control" id="beerPrice" placeholder="Price" required>
-  <input type="number" class="form-control" id="beerStock" placeholder="Stock" required>
-  <select class="form-control" id="beerType">
-    <option value="1">Light</option>
-    <option value="2">Brown</option>
-    <option value="3">Dark</option>
-  </select>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-<br>
-<H4>Update Beer</H4>
-<form id="myFormUpdate">
-  <input type="number" class="form-control" id="id" placeholder="ID">
-  <input class="form-control" id="imgURL2" placeholder="Image URL">
-  <input class="form-control" id="beerName2" placeholder="Name" required>
-  <input class="form-control" id="beerBrand2" placeholder="Brand" required>
-  <input type="number" class="form-control" id="beerPercentage2" placeholder="Percentage" required>
-  <input type="number" class="form-control" id="beerPrice2" placeholder="Price" required>
-  <input type="number" class="form-control" id="beerStock2" placeholder="Stock" required>
-  <select class="form-control" id="beerType2">
-    <option value="1">Light</option>
-    <option value="2">Brown</option>
-    <option value="3">Dark</option>
-  </select>
-  <button type="submitUpdate" class="btn btn-primary">Submit</button>
-</form>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="addBeer.js"></script>
+  <header>
+
+  </header>
+
+  <H4>Create New Beer</H4>
+  <form id="myFormAdd">
+    <input class="imgURL" placeholder="Image URL">
+    <input class="beerName" placeholder="Name" required>
+    <input class="beerBrand" placeholder="Brand" required>
+    <input type="number" class="beerPercentage" placeholder="Percentage" required>
+    <input type="number" class="beerPrice" placeholder="Price" required>
+    <input type="number" class="beerStock" placeholder="Stock" required>
+    <select class="beerType">
+      <option value="1">Light</option>
+      <option value="2">Brown</option>
+      <option value="3">Dark</option>
+    </select>
+    <button type="submit">Submit</button>
+  </form>
+
+  <br>
+
+  <H4>Update Beer</H4>
+  <form id="myFormUpdate">
+    <input type="number" class="id" placeholder="ID">
+    <input class="imgURL" placeholder="Image URL">
+    <input class="beerName" placeholder="Name" required>
+    <input class="beerBrand" placeholder="Brand" required>
+    <input type="number" class="beerPercentage" placeholder="Percentage" required>
+    <input type="number" class="beerPrice" placeholder="Price" required>
+    <input type="number" class="beerStock" placeholder="Stock" required>
+    <select class="beerType">
+      <option value="1">Light</option>
+      <option value="2">Brown</option>
+      <option value="3">Dark</option>
+    </select>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <br>
+
+  <H4>Delete Beer</H4>
+  <form id="myFormDelete">
+    <input type="number" class="id" placeholder="ID">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <H4>Beer</H4>
+  <button id="GETBEER">Submit</button>
+  <div class="row">
+    <div class="col-6">
+      <table id="postTable">
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>Title</th>
+            <th>Text</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="col-6">
+      <table id="commentsTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Text</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="beerJS.js"></script>
 </body>
 </html>
