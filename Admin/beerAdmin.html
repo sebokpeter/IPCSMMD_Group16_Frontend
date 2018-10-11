@@ -7,15 +7,12 @@
   <link rel='stylesheet' type='text/css' href='styles.css'>
 </head>
 <body>
-  <header>
-      
-</header>
+<h1 class="center">Beer Admin page</h1>
 
-  <h4>Create New Beer</h4>
+  <h2>Create New Beer</h2>
   <form id="myFormAdd">
-    <input class="imgURL" placeholder="Image URL">
-    <input class="beerName" placeholder="Name" required="">
     <input class="beerBrand" placeholder="Brand" required="">
+    <input class="beerName" placeholder="Name" required="">
     <input type="number" class="beerPercentage" placeholder="Percentage" required="">
     <input type="number" class="beerPrice" placeholder="Price" required="">
     <input type="number" class="beerStock" placeholder="Stock" required="">
@@ -24,17 +21,17 @@
       <option value="2">Brown</option>
       <option value="3">Dark</option>
     </select>
+    <input class="imgURL" placeholder="Image URL"><br>
     <button type="submit">Submit</button>
   </form>
 
   <br>
 
-  <h4>Update Beer</h4>
+  <h2>Update Beer</h2>
   <form id="myFormUpdate">
     <input type="number" class="id" placeholder="ID">
-    <input class="imgURL" placeholder="Image URL">
-    <input class="beerName" placeholder="Name" required="">
     <input class="beerBrand" placeholder="Brand" required="">
+    <input class="beerName" placeholder="Name" required="">
     <input type="number" class="beerPercentage" placeholder="Percentage" required="">
     <input type="number" class="beerPrice" placeholder="Price" required="">
     <input type="number" class="beerStock" placeholder="Stock" required="">
@@ -43,22 +40,25 @@
       <option value="2">Brown</option>
       <option value="3">Dark</option>
     </select>
+    <input class="imgURL" placeholder="Image URL"><br>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 
   <br>
 
-  <h4>Delete Beer</h4>
+  <h2>Delete Beer</h2>
   <form id="myFormDelete">
     <input type="number" class="id" placeholder="ID">
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 
-  <h4>Beer List</h4>
-  <button id="GETBEER" onclick="postList()">Submit</button>
-  <div class="row">
-    <div class="col-6">
-      <table id="postTable" border="2">
+  <h2>Beer List</h2>
+  <div>
+    <button id="GETBEER" onclick="postList()">GET ALL BEER</button>
+  </div>
+  <div>
+    <div>
+      <table id="postTable">
         <thead>
           <tr>
             <th>ID</th>
@@ -70,13 +70,10 @@
             <th>Image</th>
           </tr>
         </thead>
-      <tbody id="beertbody"><tr><td>2</td><td>Classic</td><td>Carlsberg</td><td>500</td><td>20</td><td>20</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr><tr><td>3</td><td>Classic</td><td>Test2</td><td>500</td><td>20</td><td>20</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr><tr><td>5</td><td>Carlsberg</td><td>Test3</td><td>600</td><td>20</td><td>50</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr><tr><td>6</td><td>ASD</td><td>ASD</td><td>10</td><td>5</td><td>300</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr><tr><td>7</td><td>Please</td><td>Work</td><td>1</td><td>100</td><td>30</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr><tr><td>8</td><td>Now</td><td>Maybe</td><td>0</td><td>99</td><td>1</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr><tr><td>9</td><td>aaase</td><td>Pleeeeeeee</td><td>5</td><td>5</td><td>5</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr><tr><td>10</td><td>asdasd</td><td>asdasd</td><td>12</td><td>12</td><td>12</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr><tr><td>11</td><td>It</td><td>Works</td><td>1</td><td>1000</td><td>60</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr><tr><td>12</td><td>It</td><td>Works</td><td>1</td><td>1000</td><td>60</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr><tr><td>13</td><td>It</td><td>Works</td><td>1</td><td>1000</td><td>60</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr></tbody></table>
+      </table>
     </div>
   </div>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="beerJS.js"></script>
-
-
 </body>
 </html>

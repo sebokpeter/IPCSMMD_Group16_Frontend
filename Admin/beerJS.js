@@ -78,8 +78,10 @@ $('#myFormUpdate').on('submit',function(e){
             "stock": beerStock}),
         processData: false,
         contentType: 'application/json',
-        success: function (comments) {
-            console.log("Yiiiaaaahhhhaaaaaa");
+        success: function (post) {
+            findAndReplace(AllBeerList.find(x => x.id == id), post);
+            clearTableList();
+            postListSuccess(AllBeerList);
         },
         error: function (request, message, error) {
             handleException(request, message, error);
@@ -96,19 +98,12 @@ $('#myFormDelete').on('submit',function(e){
     $.ajax({
         url: "https://ipcsmmd-webshop-group16.azurewebsites.net/api/beers/" + id,
         type: 'DELETE',
-       /* data: JSON.stringify({
-            "id": id,
-            "name": beerName,
-            "brand": beerBrand,
-            "type": beerType,
-            "percentage": beerPercentage,
-            "price": beerPrice,
-            "imageURL": imageUrl,
-            "stock": beerStock}),*/
         processData: false,
         contentType: 'application/json',
-        success: function (comments) {
-            console.log("Yiiiaaaahhhhaaaaaa");
+        success: function (post) {
+            findAndReplace(post, null)
+            clearTableList();
+            postListSuccess(AllBeerList);
         },
         error: function (request, message, error) {
             handleException(request, message, error);
@@ -183,4 +178,13 @@ function handleException(request, message, error) {
             request.responseJSON.Message + "\n";
     }
     alert(msg);
+}
+
+function findAndReplace(oldItem, newItem) {
+    var foundIndex = AllBeerList.findIndex(x => x.id == oldItem.id);
+    if (newItem == null) {
+        AllBeerList.splice(foundIndex, 1);
+    } else {
+      AllBeerList[foundIndex] = newItem;  
+    }
 }
