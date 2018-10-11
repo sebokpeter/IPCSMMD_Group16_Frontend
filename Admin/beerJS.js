@@ -20,7 +20,7 @@ $('#myFormAdd').on('submit',function(e){
     console.log(beerType);
 
     $.ajax({
-        url: "http://localhost:64016/api/Beers",
+        url: "https://ipcsmmd-webshop-group16.azurewebsites.net/api/beers/",
         type: 'POST',
         data: JSON.stringify({
             "name": beerName,
@@ -65,7 +65,7 @@ $('#myFormUpdate').on('submit',function(e){
     console.log(beerType);
 
     $.ajax({
-        url: "http://localhost:64016/api/Beers/" + id,
+        url: "https://ipcsmmd-webshop-group16.azurewebsites.net/api/beers/" + id,
         type: 'PUT',
         data: JSON.stringify({
             "id": id,
@@ -94,7 +94,7 @@ $('#myFormDelete').on('submit',function(e){
     console.log(id);
 
     $.ajax({
-        url: "http://localhost:64016/api/Beers/" + id,
+        url: "https://ipcsmmd-webshop-group16.azurewebsites.net/api/beers/" + id,
         type: 'DELETE',
        /* data: JSON.stringify({
             "id": id,
@@ -119,7 +119,7 @@ $('#myFormDelete').on('submit',function(e){
 function postList() {
     // Call Web API to get a list of post
     $.ajax({
-      url: 'http://localhost:64016/api/Beers/',
+      url: 'https://ipcsmmd-webshop-group16.azurewebsites.net/api/beers/',
       type: 'GET',
       dataType: 'json',
       success: function (posts) {
@@ -144,7 +144,7 @@ function postListSuccess(posts) {
 function postAddRow(post) {
     // Check if <tbody> tag exists, add one if not
      if ($("#postTable tbody").length == 0) {
-      $("#postTable").append("<tbody></tbody>");
+      $("#postTable").append("<tbody id='beertbody'></tbody>");
      }
      // Append row to <table>
      $("#postTable tbody").append(
@@ -154,17 +154,13 @@ function postAddRow(post) {
 function postBuildTableRow(post) {
     var ret =
       "<tr>" +
-       "<td>" + post.id + "</td>" +
-       "<td>" + post.brand + post.name + "</td>" + 
-       "<td>" + post.price + "</td>" +
-       "<td>" + post.percentage + "</td>" +
-       "<td>" +
-        "<button type='button' " +
-          "class='btn btn-default' " +
-          "data-id='" + post.id + "'>" +
-          "<i class='fas fa-comments'></i>" + 
-        "</button>" +
-      "</td>" +
+         "<td>" + post.id + "</td>" +
+         "<td>" + post.brand + "</td>" + 
+         "<td>" + post.name + "</td>" +
+         "<td>" + post.stock + "</td>" + 
+         "<td>" + post.percentage + "</td>" +
+         "<td>" + post.price + "</td>" +
+         "<td><img src='" + post.imageURL + "' width='50' height='50'></td>" +
       "</tr>";
     return ret;
   }
@@ -183,11 +179,8 @@ function handleException(request, message, error) {
     msg += "Code: " + request.status + "\n";
     msg += "Text: " + request.statusText + "\n";
     if (request.responseJSON != null) {
-        msg += "Message" + request.responseJSON.Message + "\n";
+        msg += "Message" +
+            request.responseJSON.Message + "\n";
     }
     alert(msg);
-}
-
-function findItemInArray(post){
-
 }
