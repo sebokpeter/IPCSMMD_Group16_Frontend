@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-        
+    <meta charset="UTF-8">
+    <title>New Beer</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' href='styles.css'>
   </head>
   <body>
+    <div class="Container">
     <div class="split left">
-      <h1 class="center">Beer Admin page</h1>
+      <h1 class="center">Beer Admin</h1>
 
       <h2>Create New Beer</h2>
       <form id="myFormAdd">
@@ -27,7 +31,7 @@
 
       <h2>Update Beer</h2>
       <form id="myFormUpdate">
-        <input type="number" class="id" placeholder="ID">
+        <input type="number" class="id" placeholder="ID" required>
         <input class="beerBrand" placeholder="Brand" required="">
         <input class="beerName" placeholder="Name" required="">
         <input type="number" class="beerPercentage" placeholder="Percentage" required="">
@@ -39,20 +43,20 @@
           <option value="3">Dark</option>
         </select>
         <input class="imgURL" placeholder="Image URL"><br>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit">Submit</button>
       </form>
 
       <br>
 
       <h2>Delete Beer</h2>
       <form id="myFormDelete">
-        <input type="number" class="id" placeholder="ID">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <input type="number" class="id" placeholder="ID" required>
+        <button type="submit">Submit</button>
       </form>
 
       <h2>Beer List</h2>
       <div>
-        <button id="GETBEER" onclick="postList()">GET ALL BEER</button>
+        <button id="GetBeer" onclick="postList()">Get All Beer</button>
       </div>
       <div>
         <div>
@@ -72,12 +76,67 @@
         </div>
       </div>
     </div>
-    
-    <div class="split right">
 
+    <div class="split right">
+      <h1 class="center">Customer Admin</h1>
+
+      <h2>Create New Customer</h2>
+      <form id="myFormAddC">
+        <input class="firstName" placeholder="First Name" required="">
+        <input class="lastName" placeholder="Last Name" required="">
+        <input class="email" placeholder="Email address" required="">
+        <input class="address" placeholder="Address" required="">
+        <input class="phoneNum" placeholder="Phone Number"><br>
+        <button type="submit">Submit</button>
+      </form>
+
+      <br>
+
+      <h2>Update Customer</h2>
+      <form id="myFormUpdateC">
+        <input type="number" class="id" placeholder="ID" required>
+        <input class="firstName" placeholder="First Name" required="">
+        <input class="lastName" placeholder="Last Name" required="">
+        <input class="email" placeholder="Email address" required="">
+        <input class="address" placeholder="Address" required="">
+        <input class="phoneNum" placeholder="Phone Number"><br>
+        <button type="submit">Submit</button>
+      </form>
+
+      <br>
+
+      <h2>Delete Customer</h2>
+      <form id="myFormDeleteC">
+        <input type="number" class="id" placeholder="ID" required>
+        <button type="submit">Submit</button>
+      </form>
+
+      <h2>Customer List</h2>
+      <div>
+        <button id="GetCustomer" onclick="postListC()">Get All Customer</button>
+      </div>
+      <div>
+        <div>
+          <table id="postTableC">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Phone Number</th>
+              </tr>
+            </thead>
+          </table>
+          <br>
+        </div>
+      </div>
     </div>
 
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="beerJS.js"></script>
+    <script src="customerJS.js"></script>
   </body>
 </html>
