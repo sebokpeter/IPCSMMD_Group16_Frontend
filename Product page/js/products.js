@@ -10,15 +10,11 @@ $(document).ready(function(){
             handleException(request, message, error);
         }
     });
-
-
 });
 
 
 function openDetailPage(id) {
-    window.location= '../Detail%20page/index.html?id=' + id;
-    alert("alert");
-    console.log("log");
+    window.location= '../Detail%20page/index.html?id=' + id;                                                                                                                          
 }
 
 
