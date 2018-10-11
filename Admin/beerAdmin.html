@@ -8,41 +8,17 @@
 </head>
 <body>
   <header>
-      <nav id="nav-wrap">
-          <ul>
-          <li>
-          <div class="menu-icon-btn">
-          <i class="fa fa-bars"></i>
-          </div>
-          <ul class="main-menu-container">
-          <li><a href="../Web%20page/index.html">Home</a></li>
-          <li><a href="../Product%20page/index.html">Products</a></a></li>
-          <li><a href="../Detail%20page/index.html">Carlsberg</a></a></li>
-          <li><a href="#">Tuborg</a></a></li>
-          <li><a href="#">Heineken</a></a></li>
-          </ul>
-          </li>
-          </ul>
-          <img id="navlogo" src="img/logofinal.png" alt="">
-          <div class="search-container"> 
-          <div class="search-icon-btn">
-          <i class="fa fa-search"></i>
-          </div>
-          <div class="search-input">
-          <input type="search" class="search-bar" placeholder="Search...">
-          </div>
-          </div>
-          </nav>
+      
 </header>
 
-  <H4>Create New Beer</H4>
+  <h4>Create New Beer</h4>
   <form id="myFormAdd">
     <input class="imgURL" placeholder="Image URL">
-    <input class="beerName" placeholder="Name" required>
-    <input class="beerBrand" placeholder="Brand" required>
-    <input type="number" class="beerPercentage" placeholder="Percentage" required>
-    <input type="number" class="beerPrice" placeholder="Price" required>
-    <input type="number" class="beerStock" placeholder="Stock" required>
+    <input class="beerName" placeholder="Name" required="">
+    <input class="beerBrand" placeholder="Brand" required="">
+    <input type="number" class="beerPercentage" placeholder="Percentage" required="">
+    <input type="number" class="beerPrice" placeholder="Price" required="">
+    <input type="number" class="beerStock" placeholder="Stock" required="">
     <select class="beerType">
       <option value="1">Light</option>
       <option value="2">Brown</option>
@@ -53,15 +29,15 @@
 
   <br>
 
-  <H4>Update Beer</H4>
+  <h4>Update Beer</h4>
   <form id="myFormUpdate">
     <input type="number" class="id" placeholder="ID">
     <input class="imgURL" placeholder="Image URL">
-    <input class="beerName" placeholder="Name" required>
-    <input class="beerBrand" placeholder="Brand" required>
-    <input type="number" class="beerPercentage" placeholder="Percentage" required>
-    <input type="number" class="beerPrice" placeholder="Price" required>
-    <input type="number" class="beerStock" placeholder="Stock" required>
+    <input class="beerName" placeholder="Name" required="">
+    <input class="beerBrand" placeholder="Brand" required="">
+    <input type="number" class="beerPercentage" placeholder="Percentage" required="">
+    <input type="number" class="beerPrice" placeholder="Price" required="">
+    <input type="number" class="beerStock" placeholder="Stock" required="">
     <select class="beerType">
       <option value="1">Light</option>
       <option value="2">Brown</option>
@@ -72,44 +48,35 @@
 
   <br>
 
-  <H4>Delete Beer</H4>
+  <h4>Delete Beer</h4>
   <form id="myFormDelete">
     <input type="number" class="id" placeholder="ID">
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 
-  <H4>Beer</H4>
-  <button id="GETBEER">Submit</button>
+  <h4>Beer List</h4>
+  <button id="GETBEER" onclick="postList()">Submit</button>
   <div class="row">
     <div class="col-6">
-      <table id="postTable">
+      <table id="postTable" border="2">
         <thead>
           <tr>
-            <th>User ID</th>
-            <th>Title</th>
-            <th>Text</th>
-            <th>Edit</th>
-          </tr>
-        </thead>
-      </table>
-    </div>
-    <div class="col-6">
-      <table id="commentsTable">
-        <thead>
-          <tr>
+            <th>ID</th>
+            <th>Brand</th>
             <th>Name</th>
-            <th>Email</th>
-            <th>Text</th>
+            <th>Stock</th>
+            <th>Percentage</th>
+            <th>Price</th>
+            <th>Image</th>
           </tr>
         </thead>
-        <tbody>
-
-        </tbody>
-      </table>
+      <tbody id="beertbody"><tr><td>2</td><td>Classic</td><td>Carlsberg</td><td>500</td><td>20</td><td>20</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr><tr><td>3</td><td>Classic</td><td>Test2</td><td>500</td><td>20</td><td>20</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr><tr><td>5</td><td>Carlsberg</td><td>Test3</td><td>600</td><td>20</td><td>50</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr><tr><td>6</td><td>ASD</td><td>ASD</td><td>10</td><td>5</td><td>300</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr><tr><td>7</td><td>Please</td><td>Work</td><td>1</td><td>100</td><td>30</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr><tr><td>8</td><td>Now</td><td>Maybe</td><td>0</td><td>99</td><td>1</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr><tr><td>9</td><td>aaase</td><td>Pleeeeeeee</td><td>5</td><td>5</td><td>5</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr><tr><td>10</td><td>asdasd</td><td>asdasd</td><td>12</td><td>12</td><td>12</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr><tr><td>11</td><td>It</td><td>Works</td><td>1</td><td>1000</td><td>60</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr><tr><td>12</td><td>It</td><td>Works</td><td>1</td><td>1000</td><td>60</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr><tr><td>13</td><td>It</td><td>Works</td><td>1</td><td>1000</td><td>60</td><td><img src="https://gradybritton.com/assets/beertest-closeup.jpg" width="50" height="50"></td></tr></tbody></table>
     </div>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="beerJS.js"></script>
+
+
 </body>
 </html>

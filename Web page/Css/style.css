@@ -265,13 +265,11 @@ box-shadow: 0px 10px 84px 34px rgba(0,0,0,0.75);
     
     .search-container{
     
-    display:table;
-    
-    position:fixed;
-    
-    width:50px;
-    
-    right:0;
+        display: table;
+        position: fixed;
+        width: 50px;
+        right: 15px;
+        top: 57px;
     
     }
     
