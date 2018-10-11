@@ -52,7 +52,7 @@ header{
     
     width:100%;
     
-    background-image: url("background2.jpg");
+    background-image: url("second.jpg");
     
     background-size: cover;
     
@@ -418,9 +418,9 @@ main {
 #main-right {
     display:grid;
     grid-template-columns: repeat(3, 1fr) ;
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(3, 300px);
     grid-gap: 20%;
-    padding-top: 50px;
+    padding-top: 25px;
 }
 
 #product {
@@ -430,12 +430,11 @@ main {
     width: 200px;
     background-color: white;
     grid-column: span 1;    
-    display: grid;
 }
 
 #producttitle {
     grid-row: 1/2;
-    grid-column:span 2;
+    grid-column:1/2;
     color: #000000;
     display: flex;
     justify-content: center;
@@ -447,7 +446,7 @@ main {
 
 #productimage{
     grid-row: 2/3;
-    grid-column: span 2;
+    grid-column: 1/2;
     border-left: #000000 solid 2px;
     border-right: #000000 solid 2px;
     display: flex;
@@ -461,7 +460,7 @@ main {
 }
 
 #price{
-    grid-column: span 2;
+    grid-column: 1/2;
     grid-row: 3/4;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
@@ -471,7 +470,7 @@ main {
 }
 
 #cart{
-    grid-column: span 2;
+    grid-column: 1/2;
     grid-row:4/5;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;

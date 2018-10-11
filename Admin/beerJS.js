@@ -18,7 +18,7 @@ $('#myFormAdd').on('submit',function(e){
     console.log(beerType);
 
     $.ajax({
-        url: "https://ipcsmmd-webshop-group16.azurewebsites.net/api/beers/",
+        url: "http://localhost:64016/api/Beers",
         type: 'POST',
         data: JSON.stringify({
             "name": beerName,
@@ -30,8 +30,8 @@ $('#myFormAdd').on('submit',function(e){
             "stock": beerStock}),
         processData: false,
         contentType: 'application/json',
-        success: function () {
-            postAddRow(posts);
+        success: function (comments) {
+            console.log("Yiiiaaaahhhhaaaaaa");
         },
         error: function (request, message, error) {
             handleException(request, message, error);
@@ -61,7 +61,7 @@ $('#myFormUpdate').on('submit',function(e){
     console.log(beerType);
 
     $.ajax({
-        url: "https://ipcsmmd-webshop-group16.azurewebsites.net/api/beers/" + id,
+        url: "http://localhost:64016/api/Beers/" + id,
         type: 'PUT',
         data: JSON.stringify({
             "id": id,
@@ -90,7 +90,7 @@ $('#myFormDelete').on('submit',function(e){
     console.log(id);
 
     $.ajax({
-        url: "https://ipcsmmd-webshop-group16.azurewebsites.net/api/beers/" + id,
+        url: "http://localhost:64016/api/Beers/" + id,
         type: 'DELETE',
        /* data: JSON.stringify({
             "id": id,
@@ -115,7 +115,7 @@ $('#myFormDelete').on('submit',function(e){
 function postList() {
     // Call Web API to get a list of post
     $.ajax({
-      url: 'https://ipcsmmd-webshop-group16.azurewebsites.net/api/beers/',
+      url: 'http://localhost:64016/api/Beers/',
       type: 'GET',
       dataType: 'json',
       success: function (posts) {
@@ -138,7 +138,7 @@ function postList() {
   function postAddRow(post) {
     // Check if <tbody> tag exists, add one if not
      if ($("#postTable tbody").length == 0) {
-      $("#postTable").append("<tbody id='beertbody'></tbody>");
+      $("#postTable").append("<tbody></tbody>");
      }
      // Append row to <table>
      $("#postTable tbody").append(
@@ -148,13 +148,17 @@ function postList() {
    function postBuildTableRow(post) {
     var ret =
       "<tr>" +
-         "<td>" + post.id + "</td>" +
-         "<td>" + post.brand + "</td>" + 
-         "<td>" + post.name + "</td>" +
-         "<td>" + post.stock + "</td>" + 
-         "<td>" + post.percentage + "</td>" +
-         "<td>" + post.price + "</td>" +
-         "<td><img src='" + post.imageURL + "' width='50' height='50'></td>" +
+       "<td>" + post.id + "</td>" +
+       "<td>" + post.brand + post.name + "</td>" + 
+       "<td>" + post.price + "</td>" +
+       "<td>" + post.percentage + "</td>" +
+       "<td>" +
+        "<button type='button' " +
+          "class='btn btn-default' " +
+          "data-id='" + post.id + "'>" +
+          "<i class='fas fa-comments'></i>" + 
+        "</button>" +
+      "</td >" +
       "</tr>";
     return ret;
   }
