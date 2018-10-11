@@ -8,8 +8,32 @@
 </head>
 <body>
   <header>
-
-  </header>
+      <nav id="nav-wrap">
+          <ul>
+          <li>
+          <div class="menu-icon-btn">
+          <i class="fa fa-bars"></i>
+          </div>
+          <ul class="main-menu-container">
+          <li><a href="../Web%20page/index.html">Home</a></li>
+          <li><a href="../Product%20page/index.html">Products</a></a></li>
+          <li><a href="../Detail%20page/index.html">Carlsberg</a></a></li>
+          <li><a href="#">Tuborg</a></a></li>
+          <li><a href="#">Heineken</a></a></li>
+          </ul>
+          </li>
+          </ul>
+          <img id="navlogo" src="img/logofinal.png" alt="">
+          <div class="search-container"> 
+          <div class="search-icon-btn">
+          <i class="fa fa-search"></i>
+          </div>
+          <div class="search-input">
+          <input type="search" class="search-bar" placeholder="Search...">
+          </div>
+          </div>
+          </nav>
+</header>
 
   <H4>Create New Beer</H4>
   <form id="myFormAdd">
@@ -55,32 +79,21 @@
   </form>
 
   <H4>Beer</H4>
-  <button id="GETBEER">Submit</button>
+  <button id="GETBEER" onclick="postList()">Submit</button>
   <div class="row">
     <div class="col-6">
-      <table id="postTable">
+      <table id="postTable" border="2" >
         <thead>
           <tr>
-            <th>User ID</th>
-            <th>Title</th>
-            <th>Text</th>
-            <th>Edit</th>
-          </tr>
-        </thead>
-      </table>
-    </div>
-    <div class="col-6">
-      <table id="commentsTable">
-        <thead>
-          <tr>
+            <th>ID</th>
+            <th>Brand</th>
             <th>Name</th>
-            <th>Email</th>
-            <th>Text</th>
+            <th>Stock</th>
+            <th>Percentage</th>
+            <th>Price</th>
+            <th>Image</th>
           </tr>
         </thead>
-        <tbody>
-
-        </tbody>
       </table>
     </div>
   </div>
