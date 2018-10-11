@@ -28,7 +28,7 @@ function buildDescriptionPage(beer){
     '<div id="producttitle">' + beer.name + '</div>' +
     '<div id="productimage"> <img src="' + beer.imageURL + '" alt="css/carlsbergcan.png"></div>' +
     '<div id="price">Price: $' + beer.price + '</div>' + 
-    '<div id="cart"> <a href="../Detail%20page/index.html"> Buy</a> </div>' + 
+    '<div id="cart"> <a id="btnDetail" href="../Detail%20page/index.html"> Buy</a> </div>' + 
     '</div>';
     console.log(s);
     $('#main-right').append(s);
