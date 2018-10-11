@@ -79,7 +79,7 @@ $('#myFormUpdate').on('submit',function(e){
         processData: false,
         contentType: 'application/json',
         success: function (post) {
-            findAndReplace(AllBeerList.find(x => x.id == id), post);
+            findAndReplace(AllBeerList[AllBeerList.findIndex(x => x.id == id)], post);
             clearTableList();
             postListSuccess(AllBeerList);
         },

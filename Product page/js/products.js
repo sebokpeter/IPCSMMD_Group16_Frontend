@@ -31,7 +31,7 @@ function listBeers(beers) {
 
 function buildDescriptionPage(beer){
     var s = ' <div id="product"> ' + 
-    '<div id="producttitle">' + beer.name + '</div>' +
+    '<div id="producttitle">' + beer.brand + " " + beer.name + '</div>' +
     '<div id="productimage"> <img src="' + beer.imageURL + '" alt="css/carlsbergcan.png"></div>' +
     '<div id="price">Price: $' + beer.price + '</div>' + 
     '<div id="cart"> <a class="btnDetail" onclick="openDetailPage('+ beer.id +')"> Buy</a> </div>' + 

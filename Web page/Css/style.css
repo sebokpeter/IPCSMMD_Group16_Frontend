@@ -215,7 +215,7 @@ header {
 
 main {
 	background: url("homebackground.jpg") no-repeat;
-	background-size: contain;
+	background-size: cover;
 	grid-column: 1 / 13;
 	grid-row: 2/3;
 	grid-template-columns: repeat(12, 1fr);
@@ -260,8 +260,9 @@ main {
 }
 
 #store a:hover {
-	color: #000000;
-	background-color: #ffffff;
+	font-weight: bolder;
+	font-style: italic;
+	background-color: transparent;
 }
 
 @media only screen and (max-width: 960px) {

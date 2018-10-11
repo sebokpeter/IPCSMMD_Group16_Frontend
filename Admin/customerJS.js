@@ -26,7 +26,7 @@ $('#myFormAddC').on('submit',function(e){
             postListSuccessC(AllCustomerList);
         },
         error: function (request, message, error) {
-            handleException(request, message, error);
+            handleExceptionC(request, message, error);
         }
     });
 });
@@ -54,12 +54,12 @@ $('#myFormUpdateC').on('submit',function(e){
         processData: false,
         contentType: 'application/json',
         success: function (post) {
-            findAndReplace(AllCustomerList.find(x => x.id == id), post);
+            findAndReplaceC(AllCustomerList[AllCustomerList.findIndex(x => x.id == id)], post);
             clearTableListC();
             postListSuccessC(AllCustomerList);
         },
         error: function (request, message, error) {
-            handleException(request, message, error);
+            handleExceptionC(request, message, error);
         }
     });
 });
@@ -76,12 +76,12 @@ $('#myFormDeleteC').on('submit',function(e){
         processData: false,
         contentType: 'application/json',
         success: function (post) {
-            findAndReplace(post, null)
+            findAndReplaceC(post, null)
             clearTableListC();
             postListSuccessC(AllCustomerList);
         },
         error: function (request, message, error) {
-            handleException(request, message, error);
+            handleExceptionC(request, message, error);
         }
     });
 });
@@ -98,7 +98,7 @@ function postListC() {
         postListSuccessC(posts);
       },
       error: function (request, message, error) {
-        handleException(request, message, error);
+        handleExceptionC(request, message, error);
       }
     });
   }
@@ -143,7 +143,7 @@ function clearTableListC() {
     }
 }
 
-function handleException(request, message, error) {
+function handleExceptionC(request, message, error) {
     var msg = "";
     msg += "Code: " + request.status + "\n";
     msg += "Text: " + request.statusText + "\n";
@@ -154,7 +154,7 @@ function handleException(request, message, error) {
     alert(msg);
 }
 
-function findAndReplace(oldItem, newItem) {
+function findAndReplaceC(oldItem, newItem) {
     var foundIndex = AllCustomerList.findIndex(x => x.id == oldItem.id);
     if (newItem == null) {
         AllCustomerList.splice(foundIndex, 1);
