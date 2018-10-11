@@ -12,6 +12,7 @@ $(document).ready(function(){
     });
 });
 
+function listBeers(beers) {
     $.each(beers, function (index, beer) { 
         console.log('Beer name:' + beer.name);
         console.log('Beer brand: ' + beer.brand);
