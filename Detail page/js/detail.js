@@ -1,13 +1,14 @@
 $(document).ready(function () {
     var param = new URLSearchParams(window.location.search);
+    var id;
     if (!param.has('id')){
-        alert('Cannot retrieve values without id!');
-        window.close();
+        alert('Cannot retrieve values without id! Using default id of 1!');
+        id = 1;
     }
     else {
-        var id = param.get('id');
-        getData(id);
+        id = param.get('id');
     }
+    getData(id);
 });
 
 

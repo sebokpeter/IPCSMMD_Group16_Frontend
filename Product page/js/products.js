@@ -10,9 +10,57 @@ $(document).ready(function(){
             handleException(request, message, error);
         }
     });
+
+    $('#searchBar').on('keydown', function (e) {
+        if(e.which == 13 || e.keycode == 13) {
+            var searchedString = $(this).val();
+            search(searchedString)
+        }
+    })
+
+    function search(searchedString){
+        var beersReturnded;
+        if(searchedString || !searchedString==="") {
+           beersReturnded = getSearchedBeers(searchedString);
+        }
+        else {
+            $.ajax({
+                type: "GET",
+                url: "https://ipcsmmd-webshop-group16.azurewebsites.net/api/beers?CurrentPage=1&ItemsPerPage=6&isAscending=true&SearchField=id",
+                dataType: "json",
+                success: function (response) {
+                    beersReturnded = response;
+                },
+                error: function(request, message, error) {
+                    handleException(request, message, error);
+                }
+            });
+        }
+        if(beersReturnded===undefined || beersReturnded.length <1) {
+            alert('Could not find anything');
+            return;
+        }
+        $('#main-right').empty();
+        listBeers(beersReturnded);
+    }
 });
 
+function getSearchedBeers(searchedString){
+    $.ajax({
+        type: "GET",
+        url: "https://ipcsmmd-webshop-group16.azurewebsites.net/api/beers?CurrentPage=1&ItemsPerPage=6&isAscending=true&SearchField=id&SearchString=" + searchedString,
+        dataType: "json",
+        success: function (response) {
+            return response;              
+        },
+        error: function(request, message, error) {
+            handleException(request, message, error);
+        }
+    });
+}
 
+
+    
 function openDetailPage(id) {
     window.location= '../Detail%20page/index.html?id=' + id;                                                                                                                          
 }
