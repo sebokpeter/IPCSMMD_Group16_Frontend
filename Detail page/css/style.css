@@ -226,22 +226,23 @@ main {
 #beerbox1 {
 	height: 350px;
 	width: 300px;
-	grid-column: 6/6;
+	grid-column: 4/4;
 	grid-row: 2/5;
-	background-color: #eeeeeea1;
+	background-color: #ffffff;
 	display: block;
 	display: flex;
 	align-items: center;
+	border: #000000 solid 2px;
 }
 
 #beerbox1 img {
-	width: 100%;
+	width: 99%;
 }
 
 #beerbox2 {
-	height: 300px;
+	height: 200px;
 	width: 350px;
-	grid-column: 7/11;
+	grid-column: 5	/9;
 	grid-row: 2/5;
 	background-color: white;
 	display: grid;
@@ -266,39 +267,12 @@ main {
 #beerbox2_txt {
 	grid-row: span 2;
 	grid-column: span 4;
-	padding-top: 80px;
+	padding: 30px;
 	font-size: 22px;
 	line-height: 50px;
 }
 
-#cart {
-	grid-row: 2/3;
-	grid-column: span 4;
-	width: 440px;
-	font-family: 'Roboto', sans-serif;
-	font-size: 30px;
-	padding-top: 20px;
-	opacity: 1;
-	display: flex;
-	justify-content: center;
-	background-color: #014D06;
-	color: #FBDE78;
-	border-left: #000000 solid 2px;
-	border-right: #000000 solid 2px;
-	border-bottom: #000000 solid 2px;
-}
 
-#cart a {
-	background-color: #014D06;
-	color: #FBDE78;
-	text-decoration: none;
-}
-
-#cart a:hover {
-	color: orangered;
-	background-color: #ffffff;
-	opacity: 1;
-}
 
 .beerDetail {
 
